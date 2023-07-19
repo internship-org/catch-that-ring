@@ -16,10 +16,10 @@ public class Spawner : MonoBehaviour
     public float MinSpawnDelay = 0.25f;
     public float MaxSpawnDelay = 1f;
     public float MaxRingLifetime = 5f;
-    
+
     private void Awake() 
     {
-        SpawnArea = GetComponent<Collider>();
+        SpawnArea = GetComponent<Collider>(); 
     }
 
     private void OnEnable() {
