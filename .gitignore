@@ -20,7 +20,7 @@ sysinfo.txt
 *.mdb.meta
 
 .vscode/
-.vsconfig
+*.vsconfig
 
 # Builds
 *.apk
