@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     private Collider SpawnArea;
     private IDisposable SpawnDisposable;
 
-    public GameObject[] RingPrefabs;
+    private GameObject[] RingPrefabs;
     public GameObject BadRingPrefab;
     [Range(0f, 1f)] public float BadRingChance = 0.05f;
     public float MinSpawnDelay = 0.25f;
