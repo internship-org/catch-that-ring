@@ -5,11 +5,17 @@ namespace Lean.Touch
 {
     /// <summary>This component allows you to translate the current GameObject relative to the camera using the finger drag gesture.</summary>
     [HelpURL(LeanTouch.HelpUrlPrefix + "LeanDragTranslate")]
-    [AddComponentMenu(LeanTouch.ComponentPathPrefix + "Drag Translate")]
+    [AddComponentMenu(LeanTouch.ComponentPathPrefix + "Drag TranslateCustom")]
     public class CustomDrag : MonoBehaviour
     {
         [SerializeField]
         private bool isOnlyX = false;
+
+        [SerializeField]
+        private bool isMovedWithPhysics = false;
+
+        [SerializeField]
+        private Rigidbody myRigidBody;
 
         /// <summary>The method used to find fingers to use with this component. See LeanFingerFilter documentation for more information.</summary>
         public LeanFingerFilter Use = new LeanFingerFilter(true);
@@ -92,6 +98,7 @@ namespace Lean.Touch
         protected virtual void Awake()
         {
             Use.UpdateRequiredSelectable(gameObject);
+            myRigidBody = GetComponent<Rigidbody>();
         }
 
         protected virtual void Update()
@@ -119,7 +126,16 @@ namespace Lean.Touch
                 }
                 else
                 {
-                    Translate(screenDelta);
+                    if (isMovedWithPhysics)
+                    {
+                        myRigidBody.MovePosition(
+                            myRigidBody.position + (Vector3)screenDelta * sensitivity
+                        );
+                    }
+                    else
+                    {
+                        Translate(screenDelta);
+                    }
                 }
             }
 
@@ -194,14 +210,14 @@ namespace Lean.Touch
 
             if (camera != null)
             {
-                // Screen position of the transform
-                var screenPoint = camera.WorldToScreenPoint(transform.position);
+                // // Screen position of the transform
+                // var screenPoint = camera.WorldToScreenPoint(transform.position);
 
-                // Add the deltaPosition
-                screenPoint += (Vector3)screenDelta * Sensitivity;
+                // // Add the deltaPosition
+                // screenPoint += (Vector3)screenDelta * Sensitivity;
 
-                // Convert back to world space
-                transform.position = camera.ScreenToWorldPoint(screenPoint);
+                // // Convert back to world space
+                // transform.position = camera.ScreenToWorldPoint(screenPoint);
             }
             else
             {
