@@ -6,7 +6,7 @@ namespace Lean.Touch
     /// <summary>This component allows you to translate the current GameObject relative to the camera using the finger drag gesture.</summary>
     [HelpURL(LeanTouch.HelpUrlPrefix + "LeanDragTranslate")]
     [AddComponentMenu(LeanTouch.ComponentPathPrefix + "Drag Translate")]
-    public class LeanDragTranslate : MonoBehaviour
+    public class CustomDrag : MonoBehaviour
     {
         [SerializeField]
         private bool isOnlyX = false;
