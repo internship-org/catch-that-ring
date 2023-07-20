@@ -11,11 +11,11 @@ public class Spawner : MonoBehaviour
     private IDisposable SpawnDisposable;
 
     private GameObject[] RingPrefabs;
-    public GameObject BadRingPrefab;
+    private GameObject BadRingPrefab;
     [Range(0f, 1f)] public float BadRingChance = 0.05f;
-    public float MinSpawnDelay = 0.25f;
-    public float MaxSpawnDelay = 1f;
-    public float MaxRingLifetime = 5f;
+    [SerializeField] private float MinSpawnDelay = 0.25f;
+    [SerializeField] private float MaxSpawnDelay = 1f;
+    [SerializeField] private float MaxRingLifetime = 5f;
 
     private void Awake() 
     {
