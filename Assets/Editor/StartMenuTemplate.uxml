@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd">
+    <Style src="project://database/Assets/button-style.uss?fileID=7433441132597879392&amp;guid=336be2f4a928cca4dbfc024791bb1bf2&amp;type=3#button-style" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: -3px; align-items: center; justify-content: center;">
+        <ui:VisualElement focusable="false" style="flex-grow: 0.5; background-color: rgba(0, 0, 0, 0); flex-basis: auto; align-items: center; justify-content: center; align-self: auto; height: 944px; width: 1080px; flex-shrink: 1; flex-direction: column;">
+            <ui:Label tabindex="-1" text="Main Menu" display-tooltip-when-elided="true" name="MainMenu" style="align-items: auto; font-size: 100px; color: rgb(255, 255, 255); position: absolute; flex-direction: column; top: 10%;" />
+            <ui:Button text="Start Game" display-tooltip-when-elided="true" name="StartGame" class="button-style" />
+            <ui:Button text="Market" display-tooltip-when-elided="true" name="Market" enable-rich-text="true" class="button-style" style="margin-top: 5%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
