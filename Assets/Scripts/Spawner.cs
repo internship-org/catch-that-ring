@@ -10,37 +10,48 @@ public class Spawner : MonoBehaviour
     private Collider SpawnArea;
     private IDisposable SpawnDisposable;
 
+    [SerializeField]
     private GameObject[] RingPrefabs;
+
+    [SerializeField]
     private GameObject BadRingPrefab;
-    [Range(0f, 1f)] public float BadRingChance = 0.05f;
-    [SerializeField] private float MinSpawnDelay = 0.25f;
-    [SerializeField] private float MaxSpawnDelay = 1f;
-    [SerializeField] private float MaxRingLifetime = 5f;
 
-    private void Awake() 
+    [Range(0f, 1f)]
+    public float BadRingChance = 0.05f;
+
+    [SerializeField]
+    private float MinSpawnDelay = 0.25f;
+
+    [SerializeField]
+    private float MaxSpawnDelay = 1f;
+
+    [SerializeField]
+    private float MaxRingLifetime = 5f;
+
+    private void Awake()
     {
-        SpawnArea = GetComponent<Collider>(); 
+        SpawnArea = GetComponent<Collider>();
     }
 
-    private void OnEnable() {
-        SpawnDisposable = Observable.FromCoroutine(Spawn)
-        .Subscribe()
-        .AddTo(this);
+    private void OnEnable()
+    {
+        SpawnDisposable = Observable.FromCoroutine(Spawn).Subscribe().AddTo(this);
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         SpawnDisposable?.Dispose();
     }
 
-    private IEnumerator Spawn() 
+    private IEnumerator Spawn()
     {
         yield return new WaitForSeconds(2f);
 
-        while(enabled) 
+        while (enabled)
         {
             GameObject Prefab = RingPrefabs[UnityEngine.Random.Range(0, RingPrefabs.Length)];
 
-            if(UnityEngine.Random.value <  BadRingChance)
+            if (UnityEngine.Random.value < BadRingChance)
             {
                 Prefab = BadRingPrefab;
             }
@@ -54,6 +65,6 @@ public class Spawner : MonoBehaviour
             LeanPool.Despawn(Ring, MaxRingLifetime);
 
             yield return new WaitForSeconds(UnityEngine.Random.Range(MinSpawnDelay, MaxSpawnDelay));
-        }   
+        }
     }
 }

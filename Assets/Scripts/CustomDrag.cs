@@ -5,11 +5,17 @@ namespace Lean.Touch
 {
     /// <summary>This component allows you to translate the current GameObject relative to the camera using the finger drag gesture.</summary>
     [HelpURL(LeanTouch.HelpUrlPrefix + "LeanDragTranslate")]
-    [AddComponentMenu(LeanTouch.ComponentPathPrefix + "Drag Translate")]
+    [AddComponentMenu(LeanTouch.ComponentPathPrefix + "Drag TranslateCustom")]
     public class CustomDrag : MonoBehaviour
     {
         [SerializeField]
         private bool isOnlyX = false;
+
+        [SerializeField]
+        private bool isMovedWithPhysics = false;
+
+        [SerializeField]
+        private Rigidbody myRigidBody;
 
         /// <summary>The method used to find fingers to use with this component. See LeanFingerFilter documentation for more information.</summary>
         public LeanFingerFilter Use = new LeanFingerFilter(true);
@@ -92,6 +98,7 @@ namespace Lean.Touch
         protected virtual void Awake()
         {
             Use.UpdateRequiredSelectable(gameObject);
+            myRigidBody = GetComponent<Rigidbody>();
         }
 
         protected virtual void Update()
@@ -109,17 +116,23 @@ namespace Lean.Touch
             {
                 screenDelta = new Vector2(screenDelta.x, 0);
             }
-
-            if (screenDelta != Vector2.zero)
+            if (isMovedWithPhysics)
             {
-                // Perform the translation
-                if (transform is RectTransform)
+                myRigidBody.velocity = (Vector3)screenDelta * sensitivity;
+            }
+            else
+            {
+                if (screenDelta != Vector2.zero)
                 {
-                    TranslateUI(screenDelta);
-                }
-                else
-                {
-                    Translate(screenDelta);
+                    // Perform the translation
+                    if (transform is RectTransform)
+                    {
+                        TranslateUI(screenDelta);
+                    }
+                    else
+                    {
+                        Translate(screenDelta);
+                    }
                 }
             }
 
