@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6584900337558670260}
   - component: {fileID: 1421960281445211698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RingColliderS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 399014740496999172}
   - component: {fileID: 7445127609671215554}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RingColliderW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2946540711446798861}
   - component: {fileID: 1645438604483175002}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RingColliderE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1375199583634636150}
   - component: {fileID: 4279787877496508384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RingColliderN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8517153230296755441}
   - component: {fileID: 9120065475392831585}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HoleTriggerCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,9 +278,9 @@ GameObject:
   - component: {fileID: 8846800603158309034}
   - component: {fileID: 1524348675229116220}
   - component: {fileID: 6998299595117627212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: Ring
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,6 +416,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 97cb1ae0bd56af646971427a03e5082f, type: 3}
       propertyPath: m_Name
       value: RingObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 97cb1ae0bd56af646971427a03e5082f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

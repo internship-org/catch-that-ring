@@ -116,21 +116,18 @@ namespace Lean.Touch
             {
                 screenDelta = new Vector2(screenDelta.x, 0);
             }
-
-            if (screenDelta != Vector2.zero)
+            if (isMovedWithPhysics)
             {
-                // Perform the translation
-                if (transform is RectTransform)
+                myRigidBody.velocity = (Vector3)screenDelta * sensitivity;
+            }
+            else
+            {
+                if (screenDelta != Vector2.zero)
                 {
-                    TranslateUI(screenDelta);
-                }
-                else
-                {
-                    if (isMovedWithPhysics)
+                    // Perform the translation
+                    if (transform is RectTransform)
                     {
-                        myRigidBody.MovePosition(
-                            myRigidBody.position + (Vector3)screenDelta * sensitivity
-                        );
+                        TranslateUI(screenDelta);
                     }
                     else
                     {
@@ -210,14 +207,14 @@ namespace Lean.Touch
 
             if (camera != null)
             {
-                // // Screen position of the transform
-                // var screenPoint = camera.WorldToScreenPoint(transform.position);
+                // Screen position of the transform
+                var screenPoint = camera.WorldToScreenPoint(transform.position);
 
-                // // Add the deltaPosition
-                // screenPoint += (Vector3)screenDelta * Sensitivity;
+                // Add the deltaPosition
+                screenPoint += (Vector3)screenDelta * Sensitivity;
 
-                // // Convert back to world space
-                // transform.position = camera.ScreenToWorldPoint(screenPoint);
+                // Convert back to world space
+                transform.position = camera.ScreenToWorldPoint(screenPoint);
             }
             else
             {
