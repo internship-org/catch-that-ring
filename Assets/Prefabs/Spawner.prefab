@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5.13, z: 0}
-  m_LocalScale: {x: 14.99, y: 1, z: 0.05}
+  m_LocalScale: {x: 14, y: 1, z: 0.18}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,6 +73,7 @@ MonoBehaviour:
   - {fileID: 8391426091014089064, guid: f57bd753b1ca8f64e9f89db047634fad, type: 3}
   - {fileID: 8391426091014089064, guid: 6314bed94c4742f408d3a5e4f32439e9, type: 3}
   - {fileID: 8391426091014089064, guid: 005709d1384ab59429801f93436c8d2b, type: 3}
+  - {fileID: 6440540524033598029, guid: d8c312e5a648c7745a033d0e4f379bb7, type: 3}
   BadRingPrefab: {fileID: 8391426091014089064, guid: 1bfe409b79a9869418caaff359ccdd8b, type: 3}
   BadRingChance: 0.05
   MinSpawnDelay: 1
