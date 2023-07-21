@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2524364335000043546}
   - component: {fileID: 5957015739482968488}
+  - component: {fileID: 1739552259655584883}
   m_Layer: 0
   m_Name: ScoreTrigger
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2446565730041752090}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.26, z: 0}
+  m_LocalPosition: {x: 0, y: -0.388, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,6 +56,19 @@ CapsuleCollider:
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1739552259655584883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2446565730041752090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b700cd7f75fc8884ea29bad8551ba579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ringCollectTrigger: {fileID: 0}
 --- !u!1 &5999809131877891578
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +228,7 @@ MonoBehaviour:
     RequiredMouseButtons: 0
     RequiredSelectable: {fileID: 0}
   _camera: {fileID: 0}
-  sensitivity: 1
+  sensitivity: 1.2
   damping: -1
   inertia: 0
   remainingTranslation: {x: 0, y: 0, z: 0}
