@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 9120065475392831585}
   m_Layer: 6
   m_Name: HoleTriggerCollider
-  m_TagString: Untagged
+  m_TagString: RingTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,7 +263,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.0025040328
+  m_Radius: 0.004504033
   m_Height: 0.0141352005
   m_Direction: 1
   m_Center: {x: -0.00031697063, y: 0.000028594732, z: -0.00007613174}
