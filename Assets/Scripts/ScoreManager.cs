@@ -32,12 +32,12 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int additionalScore)
     {
+        // if (Score.Value > 0)
         Score.Value += additionalScore;
     }
 
     void AnimateTextChange(GameObject textToAnimate)
     {
-        print(textToAnimate.gameObject.name);
         textToAnimate.transform
             .DOScale(0.5f, 0.1f)
             .OnComplete(() =>
