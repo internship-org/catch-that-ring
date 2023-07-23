@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7808736184608518784, guid: ca335a9833fb36142abcbd248bc52ce2, type: 3}
       propertyPath: BadRingChance
-      value: 1
+      value: 0.178
       objectReference: {fileID: 0}
     - target: {fileID: 7808736184608518784, guid: ca335a9833fb36142abcbd248bc52ce2, type: 3}
       propertyPath: RingPrefabs.Array.size

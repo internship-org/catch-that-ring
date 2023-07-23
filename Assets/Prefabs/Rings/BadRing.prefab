@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 8846800603158309034}
   - component: {fileID: 1524348675229116220}
   - component: {fileID: 2247927198620891346}
+  - component: {fileID: 5696390463047936328}
   m_Layer: 6
   m_Name: BadRing
   m_TagString: Ring
@@ -360,6 +361,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47bac80a21a18b4b91b990df1cb4e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5696390463047936328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8391426091014089064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f63c42af579eae40aa424c38a2cc3cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worthPoints: -5
+  dropChance: 0.1
 --- !u!1001 &4737397918290411218
 PrefabInstance:
   m_ObjectHideFlags: 0

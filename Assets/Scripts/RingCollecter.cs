@@ -23,7 +23,7 @@ public class RingCollecter : MonoBehaviour
             .Where(collider => collider.CompareTag(ringTag))
             .Subscribe(collider =>
             {
-                ScoreManager.Instance.AddScore();
+                collider.GetComponentInParent<RingBase>().ApplyEffect();
                 LeanPool.Despawn(collider.transform.parent.gameObject);
             })
             .AddTo(this);
