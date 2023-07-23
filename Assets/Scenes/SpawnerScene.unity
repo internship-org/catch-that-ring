@@ -466,6 +466,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7808736184608518784, guid: ca335a9833fb36142abcbd248bc52ce2, type: 3}
+      propertyPath: RingPrefabs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808736184608518784, guid: ca335a9833fb36142abcbd248bc52ce2, type: 3}
+      propertyPath: RingPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8391426091014089064, guid: 6314bed94c4742f408d3a5e4f32439e9, type: 3}
+    - target: {fileID: 7808736184608518784, guid: ca335a9833fb36142abcbd248bc52ce2, type: 3}
+      propertyPath: RingPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 8391426091014089064, guid: 005709d1384ab59429801f93436c8d2b, type: 3}
+    - target: {fileID: 7808736184608518784, guid: ca335a9833fb36142abcbd248bc52ce2, type: 3}
+      propertyPath: RingPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8391426091014089064, guid: f57bd753b1ca8f64e9f89db047634fad, type: 3}
+    - target: {fileID: 7808736184608518784, guid: ca335a9833fb36142abcbd248bc52ce2, type: 3}
+      propertyPath: RingPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 8391426091014089064, guid: 1bfe409b79a9869418caaff359ccdd8b, type: 3}
+    - target: {fileID: 7808736184608518784, guid: ca335a9833fb36142abcbd248bc52ce2, type: 3}
+      propertyPath: RingPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8391426091014089064, guid: 3ea18cb5244d41a468eded7924b52d60, type: 3}
+    - target: {fileID: 7808736184608518784, guid: ca335a9833fb36142abcbd248bc52ce2, type: 3}
+      propertyPath: RingPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 8391426091014089064, guid: 1bfe409b79a9869418caaff359ccdd8b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

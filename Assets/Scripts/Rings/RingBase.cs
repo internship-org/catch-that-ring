@@ -4,9 +4,8 @@ public abstract class RingBase : MonoBehaviour
 {
     [SerializeField]
     protected int worthPoints = 0;
-
     [SerializeField]
-    public abstract float dropChance { get; set; }
+    public float dropChance = 0f;
 
     public abstract void ApplyEffect();
 

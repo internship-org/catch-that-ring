@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class PowerUpRing : RingBase
 {
     public override void ApplyEffect()
@@ -9,6 +11,4 @@ public class PowerUpRing : RingBase
     {
         ScoreManager.Instance.AddScore(-1);
     }
-
-    public override float dropChance { get; set; } = 0.15f;
 }
