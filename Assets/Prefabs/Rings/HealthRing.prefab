@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 8846800603158309034}
   - component: {fileID: 1524348675229116220}
   - component: {fileID: 7766649793162485850}
+  - component: {fileID: -6025458248228892915}
   m_Layer: 6
   m_Name: HealthRing
   m_TagString: Ring
@@ -345,6 +346,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47bac80a21a18b4b91b990df1cb4e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6025458248228892915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8391426091014089064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ef96f86dba5074baabaddea87295e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worthPoints: 0
+  dropChance: 0.02
 --- !u!1001 &4737397918290411218
 PrefabInstance:
   m_ObjectHideFlags: 0
