@@ -11,4 +11,6 @@ public class BadRing : RingBase
     {
         LeanPool.Despawn(this.transform.parent.gameObject);
     }
+
+    public override float dropChance { get; set; } = 0.3f;
 }
