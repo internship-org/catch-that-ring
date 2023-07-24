@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddc460b59877b24b949c8e0b64ecc39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worthPoints: 1
+  worthPoints: 2
   dropChance: 0.5
 --- !u!1001 &4737397918290411218
 PrefabInstance:

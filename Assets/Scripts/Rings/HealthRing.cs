@@ -2,11 +2,12 @@ public class HealthRing : RingBase
 {
     public override void ApplyEffect()
     {
-        ScoreManager.Instance.AddScore(1);
+        HealthManager.Instance.AlterHealth(1);
     }
 
     public override void OnMissed()
     {
+        base.OnMissed();
         ScoreManager.Instance.AddScore(-1);
     }
 }

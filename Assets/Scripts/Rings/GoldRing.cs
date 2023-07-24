@@ -2,11 +2,12 @@ public class GoldRing : RingBase
 {
     public override void ApplyEffect()
     {
-        ScoreManager.Instance.AddScore(5);
+        base.ApplyEffect();
     }
 
     public override void OnMissed()
     {
-        ScoreManager.Instance.AddScore(-1);
+        base.OnMissed();
+        ScoreManager.Instance.AddScore(-10);
     }
 }

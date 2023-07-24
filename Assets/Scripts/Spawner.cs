@@ -14,7 +14,6 @@ public class Spawner : MonoBehaviour
     private GameObject[] RingPrefabs;
 
     [Header("Spawn Settings")]
-
     [SerializeField]
     private float MinSpawnDelay = 0.25f;
 
@@ -29,7 +28,6 @@ public class Spawner : MonoBehaviour
     private void Awake()
     {
         SpawnArea = GetComponent<Collider>();
-        
     }
 
     private void OnEnable()
@@ -50,7 +48,6 @@ public class Spawner : MonoBehaviour
             if (ring != null)
             {
                 totalDropChances += ring.dropChance;
-                Debug.Log(totalDropChances);
             }
         }
 
@@ -62,7 +59,7 @@ public class Spawner : MonoBehaviour
                 RingBase ring = prefab.GetComponent<RingBase>();
                 if (ring != null)
                 {
-                    Debug.Log(ring.dropChance + " / " + totalDropChances); 
+                    Debug.Log(ring.dropChance + " / " + totalDropChances);
                     ring.dropChance /= totalDropChances;
                 }
             }

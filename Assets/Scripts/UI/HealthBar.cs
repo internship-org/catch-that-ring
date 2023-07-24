@@ -9,9 +9,6 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     private IntVariable Health;
 
-    [SerializeField]
-    private IntConstant MaxHealth;
-
     private void Start()
     {
         Health

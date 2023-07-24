@@ -5,9 +5,6 @@ public class HealthManager : MonoBehaviour
 {
     [SerializeField]
     private IntVariable Health;
-
-    [SerializeField]
-    private IntConstant MaxHealth;
     public static HealthManager Instance;
 
     public bool IsDead => Health.Value <= 0;
@@ -17,8 +14,9 @@ public class HealthManager : MonoBehaviour
         Instance = this;
     }
 
-    public void UpdateHealth(int amount)
+    public void AlterHealth(int amount)
     {
+        print("ASDASDASD");
         Health.Value += amount;
         if (Health.Value <= 0)
         {
