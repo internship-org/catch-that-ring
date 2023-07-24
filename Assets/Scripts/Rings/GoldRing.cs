@@ -1,4 +1,3 @@
-using UnityEngine;
 public class GoldRing : RingBase
 {
     public override void ApplyEffect()

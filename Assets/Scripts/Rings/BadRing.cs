@@ -1,6 +1,4 @@
 using Lean.Pool;
-using UnityEngine;
-
 public class BadRing : RingBase
 {
     public override void ApplyEffect()

@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public abstract class RingBase : MonoBehaviour
 {
     [SerializeField]

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class HealthRing : RingBase
 {
     public override void ApplyEffect()

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class PowerUpRing : RingBase
 {
     public override void ApplyEffect()
