@@ -3,5 +3,29 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    public IntVariable health;
+    [SerializeField]
+    private IntVariable Health;
+
+    [SerializeField]
+    private IntConstant MaxHealth;
+    public static HealthManager Instance;
+
+    public bool IsDead => Health.Value <= 0;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    public void UpdateHealth(int amount)
+    {
+        Health.Value += amount;
+        if (Health.Value <= 0)
+        {
+            Health.Value = 0;
+            Die();
+        }
+    }
+
+    void Die() { }
 }

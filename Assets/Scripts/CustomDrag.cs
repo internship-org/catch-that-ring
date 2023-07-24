@@ -101,6 +101,25 @@ namespace Lean.Touch
             myRigidBody = GetComponent<Rigidbody>();
         }
 
+        private void FixedUpdate()
+        {
+            var oldPosition = transform.localPosition;
+
+            // Get the fingers we want to use
+            var fingers = Use.UpdateAndGetFingers();
+
+            // Calculate the screenDelta value based on these fingers
+            var screenDelta = LeanGesture.GetScreenDelta(fingers);
+            if (isOnlyX)
+            {
+                screenDelta = new Vector2(screenDelta.x, 0);
+            }
+            if (isMovedWithPhysics)
+            {
+                myRigidBody.velocity = (Vector3)screenDelta * sensitivity * Time.deltaTime;
+            }
+        }
+
         protected virtual void Update()
         {
             // Store
@@ -116,11 +135,7 @@ namespace Lean.Touch
             {
                 screenDelta = new Vector2(screenDelta.x, 0);
             }
-            if (isMovedWithPhysics)
-            {
-                myRigidBody.velocity = (Vector3)screenDelta * sensitivity;
-            }
-            else
+            if (!isMovedWithPhysics)
             {
                 if (screenDelta != Vector2.zero)
                 {
