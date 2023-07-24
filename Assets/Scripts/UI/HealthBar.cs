@@ -23,15 +23,19 @@ public class HealthBar : MonoBehaviour
                     () => healthBarImage.fillAmount,
                     x => healthBarImage.fillAmount = x,
                     1.0f * health / Health.InitialValue,
-                    0.5f
+                    1f
                 );
                 if (health < 2)
                 {
-                    healthBarImage.DOColor(Color.red, 0.5f);
+                    healthBarImage.DOColor(Color.red, 1f);
                 }
                 else if (health < 4)
                 {
-                    healthBarImage.DOColor(Color.yellow, 0.5f);
+                    healthBarImage.DOColor(Color.yellow, 1f);
+                }
+                else
+                {
+                    healthBarImage.DOColor(Color.green, 1f);
                 }
             });
 
