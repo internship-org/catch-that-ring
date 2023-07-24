@@ -25,6 +25,14 @@ public class HealthBar : MonoBehaviour
                     1.0f * health / Health.InitialValue,
                     0.5f
                 );
+                if (health < 2)
+                {
+                    healthBarImage.DOColor(Color.red, 0.5f);
+                }
+                else if (health < 4)
+                {
+                    healthBarImage.DOColor(Color.yellow, 0.5f);
+                }
             });
 
         Observable
