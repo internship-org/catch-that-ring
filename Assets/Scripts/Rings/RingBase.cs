@@ -16,6 +16,6 @@ public abstract class RingBase : MonoBehaviour
 
     public virtual void OnMissed()
     {
-        LeanPool.Despawn(this.transform.parent.gameObject);
+        LeanPool.Despawn(gameObject);
     }
 }

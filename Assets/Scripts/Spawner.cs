@@ -107,7 +107,7 @@ public class Spawner : MonoBehaviour
             Position.z = UnityEngine.Random.Range(SpawnArea.bounds.min.z, SpawnArea.bounds.max.z);
 
             GameObject Ring = LeanPool.Spawn(Prefab, Position, Quaternion.identity);
-            LeanPool.Despawn(Ring, MaxRingLifetime);
+            // LeanPool.Despawn(Ring, MaxRingLifetime);
 
             yield return new WaitForSeconds(UnityEngine.Random.Range(MinSpawnDelay, MaxSpawnDelay));
         }
