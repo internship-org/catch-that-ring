@@ -1,5 +1,4 @@
 using Lean.Pool;
-
 public class BadRing : RingBase
 {
     public override void ApplyEffect()

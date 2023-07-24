@@ -1,12 +1,10 @@
 using UnityEngine;
-
 public abstract class RingBase : MonoBehaviour
 {
     [SerializeField]
     protected int worthPoints = 0;
-
     [SerializeField]
-    public float dropChance { get; set; } = 1f;
+    public float dropChance = 0f;
 
     public abstract void ApplyEffect();
 

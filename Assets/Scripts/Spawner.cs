@@ -13,11 +13,7 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private GameObject[] RingPrefabs;
 
-    [SerializeField]
-    private GameObject BadRingPrefab;
-
-    [Range(0f, 1f)]
-    public float BadRingChance = 0.05f;
+    [Header("Spawn Settings")]
 
     [SerializeField]
     private float MinSpawnDelay = 0.25f;
@@ -28,14 +24,50 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private float MaxRingLifetime = 5f;
 
+    private float totalDropChances = 0f;
+
     private void Awake()
     {
         SpawnArea = GetComponent<Collider>();
+        
     }
 
     private void OnEnable()
     {
         SpawnDisposable = Observable.FromCoroutine(Spawn).Subscribe().AddTo(this);
+        // Calculate the total drop chances when the spawner is enabled
+        CalculateTotalDropChances();
+    }
+
+    private void CalculateTotalDropChances()
+    {
+        totalDropChances = 0f;
+
+        // Iterate over all the ring prefabs and get their dropChance from the RingBase
+        foreach (GameObject prefab in RingPrefabs)
+        {
+            RingBase ring = prefab.GetComponent<RingBase>();
+            if (ring != null)
+            {
+                totalDropChances += ring.dropChance;
+                Debug.Log(totalDropChances);
+            }
+        }
+
+        // If the totalDropChances exceed 1, scale down the individual drop chances
+        if (totalDropChances > 1f)
+        {
+            foreach (GameObject prefab in RingPrefabs)
+            {
+                RingBase ring = prefab.GetComponent<RingBase>();
+                if (ring != null)
+                {
+                    Debug.Log(ring.dropChance + " / " + totalDropChances); 
+                    ring.dropChance /= totalDropChances;
+                }
+            }
+            totalDropChances = 1f;
+        }
     }
 
     private void OnDisable()
@@ -49,11 +81,27 @@ public class Spawner : MonoBehaviour
 
         while (enabled)
         {
-            GameObject Prefab = RingPrefabs[UnityEngine.Random.Range(0, RingPrefabs.Length)];
+            // Generate a random value between 0 and totalDropChances
+            float randomValue = UnityEngine.Random.Range(0f, totalDropChances);
 
-            if (UnityEngine.Random.value < BadRingChance)
+            GameObject Prefab = null;
+
+            // Choose the prefab based on their dropChance
+            foreach (GameObject prefab in RingPrefabs)
             {
-                Prefab = BadRingPrefab;
+                RingBase ring = prefab.GetComponent<RingBase>();
+                if (ring != null)
+                {
+                    if (randomValue < ring.dropChance)
+                    {
+                        Prefab = prefab;
+                        break;
+                    }
+                    else
+                    {
+                        randomValue -= ring.dropChance;
+                    }
+                }
             }
 
             Vector3 Position = new Vector3();
