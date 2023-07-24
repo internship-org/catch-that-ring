@@ -2,6 +2,7 @@ using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UniRx;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class HealthBar : MonoBehaviour
 {
@@ -17,8 +18,13 @@ public class HealthBar : MonoBehaviour
             .ObserveChange()
             .Subscribe(health =>
             {
-                GetComponent<Image>().fillAmount = 1.0f * health / Health.InitialValue;
-                print("ASDADSA");
+                var healthBarImage = GetComponent<Image>();
+                DOTween.To(
+                    () => healthBarImage.fillAmount,
+                    x => healthBarImage.fillAmount = x,
+                    1.0f * health / Health.InitialValue,
+                    0.5f
+                );
             });
 
         Observable
