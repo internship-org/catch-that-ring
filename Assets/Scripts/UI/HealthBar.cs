@@ -8,37 +8,50 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField]
     private IntVariable Health;
+    Image healthBarImage;
+
+    Tween barTween;
+    Tween colorTween;
+
+    private void Awake()
+    {
+        Health.Value = Health.InitialValue;
+    }
 
     private void Start()
     {
-        Health
-            .ObserveChange()
-            .Subscribe(health =>
-            {
-                var healthBarImage = GetComponent<Image>();
-                DOTween.To(
-                    () => healthBarImage.fillAmount,
-                    x => healthBarImage.fillAmount = x,
-                    1.0f * health / Health.InitialValue,
-                    1f
-                );
-                if (health < 2)
-                {
-                    healthBarImage.DOColor(Color.red, 1f);
-                }
-                else if (health < 4)
-                {
-                    healthBarImage.DOColor(Color.yellow, 1f);
-                }
-                else
-                {
-                    healthBarImage.DOColor(Color.green, 1f);
-                }
-            });
+        healthBarImage = GetComponent<Image>();
+    }
 
-        Observable
-            .EveryUpdate()
-            .Where(_ => Input.GetKeyDown(KeyCode.Space))
-            .Subscribe(_ => Health.Value -= 1);
+    public void AnimateHealthBar()
+    {
+        barTween = DOTween.To(
+            () => healthBarImage.fillAmount,
+            x => healthBarImage.fillAmount = x,
+            1.0f * Health.Value / Health.InitialValue,
+            1f
+        );
+    }
+
+    public void AnimateBarColor()
+    {
+        if (Health.Value < 2)
+        {
+            colorTween = healthBarImage.DOColor(Color.red, 1f);
+        }
+        else if (Health.Value < 4)
+        {
+            colorTween = healthBarImage.DOColor(Color.yellow, 1f);
+        }
+        else
+        {
+            colorTween = healthBarImage.DOColor(Color.green, 1f);
+        }
+    }
+
+    private void OnDisable()
+    {
+        colorTween.Kill();
+        barTween.Kill();
     }
 }

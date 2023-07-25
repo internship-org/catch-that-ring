@@ -16,13 +16,12 @@ public class HealthManager : MonoBehaviour
 
     public void AlterHealth(int amount)
     {
-        Health.Value += amount;
-        if (Health.Value <= 0)
-        {
-            Health.Value = 0;
-            Die();
-        }
+        if (Health.Value > 0)
+            Health.Value += amount;
     }
 
-    void Die() { }
+    public void Die()
+    {
+        print("you dead");
+    }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+
 public class UIController : MonoBehaviour
 {
-     
     public Button startButton;
     public Button marketButton;
 
@@ -19,11 +19,13 @@ public class UIController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void StartButtonPressed(){
+    void StartButtonPressed()
+    {
         SceneManager.LoadScene("Level");
     }
-    void MarketButtonPressed(){
+
+    void MarketButtonPressed()
+    {
         SceneManager.LoadScene("STest");
     }
-
 }
