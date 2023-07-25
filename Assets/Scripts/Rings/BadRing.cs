@@ -1,13 +1,15 @@
 using Lean.Pool;
+
 public class BadRing : RingBase
 {
     public override void ApplyEffect()
     {
-        ScoreManager.Instance.AddScore(-1);
+        base.ApplyEffect();
+        HealthManager.Instance.AlterHealth(-3);
     }
 
     public override void OnMissed()
     {
-        LeanPool.Despawn(this.transform.parent.gameObject);
+        base.OnMissed();
     }
 }

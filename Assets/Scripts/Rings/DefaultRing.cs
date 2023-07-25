@@ -2,11 +2,13 @@ public class DefaultRing : RingBase
 {
     public override void ApplyEffect()
     {
-        ScoreManager.Instance.AddScore(1);
+        base.ApplyEffect();
     }
 
     public override void OnMissed()
     {
-        ScoreManager.Instance.AddScore(-1);
+        base.OnMissed();
+        HealthManager.Instance.AlterHealth(-1);
+        ScoreManager.Instance.AddScore(-2);
     }
 }

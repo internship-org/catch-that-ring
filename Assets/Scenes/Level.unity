@@ -181,8 +181,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7808736184608518784, guid: ca335a9833fb36142abcbd248bc52ce2, type: 3}
       propertyPath: RingPrefabs.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7808736184608518784, guid: ca335a9833fb36142abcbd248bc52ce2, type: 3}
+      propertyPath: RingPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8391426091014089064, guid: 1bfe409b79a9869418caaff359ccdd8b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -917,7 +921,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: {fileID: 11400000, guid: 07eb38d9029518c4aa0736dbb194066d, type: 2}
-  MaxHealth: {fileID: 11400000, guid: 83cd648982928514385af1467547eab7, type: 2}
 --- !u!4 &828621862
 Transform:
   m_ObjectHideFlags: 0
@@ -1123,7 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.14805162, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1161,7 +1164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: {fileID: 11400000, guid: 07eb38d9029518c4aa0736dbb194066d, type: 2}
-  MaxHealth: {fileID: 11400000, guid: 83cd648982928514385af1467547eab7, type: 2}
 --- !u!1 &1487938111
 GameObject:
   m_ObjectHideFlags: 0
