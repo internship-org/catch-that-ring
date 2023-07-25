@@ -9,6 +9,13 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     private IntVariable Health;
 
+    Tween barTween;
+
+    private void Awake()
+    {
+        Health.Value = Health.InitialValue;
+    }
+
     private void Start()
     {
         Health
@@ -16,7 +23,7 @@ public class HealthBar : MonoBehaviour
             .Subscribe(health =>
             {
                 var healthBarImage = GetComponent<Image>();
-                DOTween.To(
+                barTween = DOTween.To(
                     () => healthBarImage.fillAmount,
                     x => healthBarImage.fillAmount = x,
                     1.0f * health / Health.InitialValue,
@@ -34,11 +41,17 @@ public class HealthBar : MonoBehaviour
                 {
                     healthBarImage.DOColor(Color.green, 1f);
                 }
-            });
+            })
+            .AddTo(this);
 
         Observable
             .EveryUpdate()
             .Where(_ => Input.GetKeyDown(KeyCode.Space))
             .Subscribe(_ => Health.Value -= 1);
+    }
+
+    private void OnDisable()
+    {
+        barTween.Kill();
     }
 }
