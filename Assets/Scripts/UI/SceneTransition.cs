@@ -5,6 +5,22 @@ public class SceneTransition : MonoBehaviour
 {
     CanvasGroup canvasGroup;
 
+    //make this singleton
+    public static SceneTransition Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -17,6 +33,7 @@ public class SceneTransition : MonoBehaviour
             .OnComplete(() =>
             {
                 SceneController.Instance.LoadGameScene();
+                canvasGroup.DOFade(0, 0.5f);
             });
     }
 }
