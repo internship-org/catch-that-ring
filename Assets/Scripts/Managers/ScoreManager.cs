@@ -32,8 +32,8 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int additionalScore)
     {
-        // if (Score.Value > 0)
-        Score.Value += additionalScore;
+        if (Score.Value > 0)
+            Score.Value += additionalScore;
     }
 
     void AnimateTextChange(GameObject textToAnimate)

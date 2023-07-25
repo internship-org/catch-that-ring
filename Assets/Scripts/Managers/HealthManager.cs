@@ -16,7 +16,6 @@ public class HealthManager : MonoBehaviour
 
     public void AlterHealth(int amount)
     {
-        print("ASDASDASD");
         Health.Value += amount;
         if (Health.Value <= 0)
         {
