@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worthPoints: 2
-  dropChance: 0.5
+  dropChance: 0.8
 --- !u!1001 &4737397918290411218
 PrefabInstance:
   m_ObjectHideFlags: 0
