@@ -8,6 +8,7 @@ public class DefaultRing : RingBase
     public override void OnMissed()
     {
         base.OnMissed();
+        HealthManager.Instance.AlterHealth(-1);
         ScoreManager.Instance.AddScore(-2);
     }
 }
