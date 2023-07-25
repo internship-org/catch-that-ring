@@ -1,44 +1,15 @@
-using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    //make this class singleton
-    public static SceneController Instance;
-
-    private void Awake()
+    public void LoadGameScene(int index)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(this);
-        }
+        SceneManager.LoadScene(index);
     }
 
-    private void Start()
+    public void LoadGameScene(string name)
     {
-        Observable
-            .EveryUpdate()
-            .Where(_ => Input.GetKeyDown(KeyCode.Escape))
-            .Subscribe(_ =>
-            {
-                LoadMainMenu();
-                print("AD");
-            });
-    }
-
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void LoadGameScene()
-    {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(name);
     }
 }
