@@ -790,7 +790,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3504383347430015317}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Menu, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4545587315816837497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,6 +1138,7 @@ GameObject:
   - component: {fileID: 509075729999268145}
   - component: {fileID: 8180032147827477126}
   - component: {fileID: 3555129460570027968}
+  - component: {fileID: 170831429276438625}
   m_Layer: 5
   m_Name: Market Menu
   m_TagString: Untagged
@@ -1216,6 +1229,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &170831429276438625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6566379085026863732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffee96c7bbab02242a986c94ad96d888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6804752916846772691
 GameObject:
   m_ObjectHideFlags: 0
