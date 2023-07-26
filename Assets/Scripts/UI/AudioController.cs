@@ -4,11 +4,11 @@ using UnityEngine.UI;
 public class Audio : MonoBehaviour
 {
     [SerializeField] private Slider volumeSlider;
-    private string musicSave = "musicVolume";
+    private string savedMusic = "musicVolume";
     
     void Start(){
-        if(!PlayerPrefs.HasKey(musicSave)){
-            PlayerPrefs.SetFloat(musicSave, 1);
+        if(!PlayerPrefs.HasKey(savedMusic)){
+            PlayerPrefs.SetFloat(savedMusic, 1);
             Load();
         }
         else{
@@ -22,9 +22,9 @@ public class Audio : MonoBehaviour
         Save();
     }
     private void Load(){
-        volumeSlider.value = PlayerPrefs.GetFloat(musicSave);
+        volumeSlider.value = PlayerPrefs.GetFloat(savedMusic);
     }
     private void Save(){
-        PlayerPrefs.SetFloat(musicSave, volumeSlider.value);
+        PlayerPrefs.SetFloat(savedMusic, volumeSlider.value);
     }
 }
