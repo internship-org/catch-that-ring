@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &11074906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5686664794890329257, guid: 3353b052408ea854ab158b9f3d60f63d, type: 3}
+  m_PrefabInstance: {fileID: 4043848222745150738}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ef9b8082109c345ba395d840e383e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &155836560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1755,7 +1766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1375336058
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2129,6 +2140,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1375336062}
           m_ObjectArgumentAssemblyTypeName: Menu, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11074906}
+        m_TargetAssemblyTypeName: GoldManager, Assembly-CSharp
+        m_MethodName: EarnEndGameGolds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2661,7 +2684,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1780075560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3345,6 +3368,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5686664794890329257, guid: 3353b052408ea854ab158b9f3d60f63d, type: 3}
+      propertyPath: goldText
+      value: 
+      objectReference: {fileID: 1063755926}
     - target: {fileID: 8298633727763285029, guid: 3353b052408ea854ab158b9f3d60f63d, type: 3}
       propertyPath: m_Name
       value: GoldManager

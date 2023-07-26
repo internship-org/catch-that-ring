@@ -7,6 +7,8 @@ public class SceneTransition : MonoBehaviour
     private SceneController sceneController;
     CanvasGroup canvasGroup;
 
+    Tween fadeTween;
+
     //make this singleton
     public static SceneTransition Instance { get; private set; }
 
@@ -33,18 +35,21 @@ public class SceneTransition : MonoBehaviour
             .OnComplete(() =>
             {
                 sceneController.LoadGameScene(index);
-                canvasGroup.DOFade(0, 0.5f);
             });
     }
 
     public void AnimateToScene(string name)
     {
-        canvasGroup
+        fadeTween = canvasGroup
             .DOFade(1, 0.5f)
             .OnComplete(() =>
             {
                 sceneController.LoadGameScene(name);
-                canvasGroup.DOFade(0, 0.5f);
             });
+    }
+
+    private void OnDisable()
+    {
+        fadeTween.Kill();
     }
 }
