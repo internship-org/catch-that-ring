@@ -8,6 +8,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     TMP_Text scoreText;
 
+    [SerializeField]
+    TMP_Text endGameScoreText;
+
     Tween textTween;
 
     public IntReactiveProperty Score = new IntReactiveProperty(0);
@@ -24,6 +27,7 @@ public class ScoreManager : MonoBehaviour
         {
             scoreText.text = score.ToString();
             AnimateTextChange(scoreText.gameObject);
+            endGameScoreText.text = "Score: " + score.ToString();
         });
     }
 
@@ -41,7 +45,7 @@ public class ScoreManager : MonoBehaviour
     void AnimateTextChange(GameObject textToAnimate)
     {
         textTween = textToAnimate.transform
-            .DOScale(0.5f, 0.1f)
+            .DOScale(0.3f, 0.1f)
             .OnComplete(() =>
             {
                 textToAnimate.transform.DOScale(Vector3.one, 0.1f);

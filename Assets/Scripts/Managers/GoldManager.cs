@@ -1,22 +1,24 @@
 using UnityAtoms.BaseAtoms;
+using TMPro;
 using UnityEngine;
 
 public class GoldManager : MonoBehaviour
 {
     [SerializeField]
     private IntVariable playerGold;
+
     public static GoldManager Instance;
+    int additionalGold = 0;
+
+    [SerializeField]
+    TMP_Text goldText;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-            Destroy(gameObject);
+        Instance = this;
     }
+
+    private void Start() { }
 
     public bool IsGoldEnough(int amount)
     {
@@ -34,6 +36,15 @@ public class GoldManager : MonoBehaviour
 
     public void AddGold(int amount)
     {
+        additionalGold += amount;
         playerGold.Value += amount;
+    }
+
+    public void EarnEndGameGolds()
+    {
+        //extra gold at each 20 points
+        additionalGold += (int)(ScoreManager.Instance.Score.Value * 0.05f);
+        playerGold.Value += additionalGold;
+        goldText.text = "Gold  +" + additionalGold.ToString();
     }
 }

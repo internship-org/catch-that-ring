@@ -303,13 +303,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61c9af59c8715844987c94127534371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
   drag: {fileID: 11400000, guid: 9c12f92644376264b8b8e98fa187e8c4, type: 2}
   worthPoints: 0
   dropChance: 0.14285713
   particleEffect: {fileID: 7416384279916537144, guid: f2aa88a548c0d7140b7edfc678ccff5e, type: 3}
   audioPlayer: {fileID: 0}
-
 --- !u!1 &8405537523505546691
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +359,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.004504033
+  m_Radius: 0.002504033
   m_Height: 0.0141352005
   m_Direction: 1
   m_Center: {x: -0.00031697063, y: 0.000028594732, z: -0.00007613174}

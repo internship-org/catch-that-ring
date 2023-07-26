@@ -10,6 +10,5 @@ public class GoldRing : RingBase
     public override void OnMissed()
     {
         base.OnMissed();
-        ScoreManager.Instance.AddScore(-10);
     }
 }

@@ -59,7 +59,6 @@ public class Spawner : MonoBehaviour
                 RingBase ring = prefab.GetComponent<RingBase>();
                 if (ring != null)
                 {
-                    Debug.Log(ring.dropChance + " / " + totalDropChances);
                     ring.dropChance /= totalDropChances;
                 }
             }
