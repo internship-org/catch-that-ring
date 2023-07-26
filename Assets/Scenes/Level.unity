@@ -710,6 +710,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497467722}
   m_CullTransparentMesh: 1
+--- !u!1 &508242553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 508242555}
+  - component: {fileID: 508242554}
+  m_Layer: 0
+  m_Name: CameraManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &508242554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508242553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbb2648755cedf14395fbfdc2e82c543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stableCamera: {fileID: 806970219}
+  deathCamera: {fileID: 965906797}
+  shakeIntensity: 1
+  shakeTime: 0.2
+--- !u!4 &508242555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508242553}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3250005, y: -9.085001, z: -0.010002136}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &537075727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,6 +1960,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: {fileID: 11400000, guid: 07eb38d9029518c4aa0736dbb194066d, type: 2}
+  DieEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 508242554}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchToDeathCamera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1468069811
 Transform:
   m_ObjectHideFlags: 0
@@ -2867,6 +2930,7 @@ GameObject:
   - component: {fileID: 2028661902}
   - component: {fileID: 2028661901}
   - component: {fileID: 2028661900}
+  - component: {fileID: 2028661903}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -2950,6 +3014,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2028661903
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028661898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &2071465882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,6 +3081,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3475893137117243081, guid: 7f2f39355ffcefd4f97050757b0a36a5, type: 3}
+      propertyPath: sensitivity
+      value: 51
+      objectReference: {fileID: 0}
     - target: {fileID: 4254500979704569291, guid: 7f2f39355ffcefd4f97050757b0a36a5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.7954845
@@ -3039,6 +3124,10 @@ PrefabInstance:
     - target: {fileID: 4254500979704569291, guid: 7f2f39355ffcefd4f97050757b0a36a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379836386245739564, guid: 7f2f39355ffcefd4f97050757b0a36a5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6786759467074871040, guid: 7f2f39355ffcefd4f97050757b0a36a5, type: 3}
       propertyPath: m_Name
@@ -3303,3 +3392,4 @@ SceneRoots:
   - {fileID: 4043848222745150738}
   - {fileID: 1686634912}
   - {fileID: 7544119963632272426}
+  - {fileID: 508242555}

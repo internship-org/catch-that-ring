@@ -19,8 +19,16 @@ public class HealthManager : MonoBehaviour
 
     public void AlterHealth(int amount)
     {
-        if (Health.Value >= 0)
-            Health.Value += amount;
+        if (Health.Value + amount > 0)
+        {
+            if (Health.Value + amount <= Health.InitialValue)
+                Health.Value += amount;
+        }
+        else
+        {
+            Health.Value = 0;
+            Die();
+        }
     }
 
     public void Die()
