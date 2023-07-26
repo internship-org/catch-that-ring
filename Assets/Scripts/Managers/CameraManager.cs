@@ -29,7 +29,6 @@ public class CameraManager : MonoBehaviour
 
     public void SwitchToDeathCamera()
     {
-        print("ADASD");
         stableCamera.gameObject.SetActive(false);
         deathCamera.gameObject.SetActive(true);
     }
