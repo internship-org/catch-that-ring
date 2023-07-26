@@ -9,12 +9,10 @@ public class CatchMisses : MonoBehaviour
     [SerializeField]
     private Collider ringMissCollider;
     private string ringTag = "RingTrigger";
-     AudioPlayer audioPlayer;
 
     private void Awake()
     {
         ringMissCollider = GetComponent<Collider>();
-        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     void Start()

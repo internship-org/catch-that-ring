@@ -13,6 +13,7 @@ public abstract class RingBase : MonoBehaviour
     [SerializeField]
     public float dropChance = 0f;
     Rigidbody rb;
+    [SerializeField] private ParticleSystem particleEffect;
     public AudioPlayer audioPlayer;
 
     private void Awake() {
@@ -22,6 +23,7 @@ public abstract class RingBase : MonoBehaviour
     public virtual void ApplyEffect()
     {
         ScoreManager.Instance.AddScore(worthPoints);
+        PlayEffect();
     }
 
     public virtual void OnMissed()
@@ -40,5 +42,12 @@ public abstract class RingBase : MonoBehaviour
         {
             rb.drag = newDrag;
         }).AddTo(this);
+    }
+
+    public void PlayEffect() {
+        if(particleEffect != null) {
+            ParticleSystem instance = Instantiate(particleEffect, transform.position, Quaternion.identity);
+            Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
+        }
     }
 }

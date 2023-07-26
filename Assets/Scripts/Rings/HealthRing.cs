@@ -2,6 +2,7 @@ public class HealthRing : RingBase
 {
     public override void ApplyEffect()
     {
+        base.ApplyEffect();
         HealthManager.Instance.AlterHealth(1);
         ApplySound();
     }
