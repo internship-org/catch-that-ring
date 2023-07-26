@@ -5,7 +5,7 @@ namespace Lean.Touch
 {
     /// <summary>This component allows you to translate the current GameObject relative to the camera using the finger drag gesture.</summary>
     [HelpURL(LeanTouch.HelpUrlPrefix + "LeanDragTranslate")]
-    [AddComponentMenu(LeanTouch.ComponentPathPrefix + "Drag TranslateCustom")]
+    [AddComponentMenu(LeanTouch.ComponentPathPrefix + "Drag Translate")]
     public class CustomDrag : MonoBehaviour
     {
         [SerializeField]
@@ -40,7 +40,7 @@ namespace Lean.Touch
         }
 
         [SerializeField]
-        private float sensitivity = 1.0f;
+        public float sensitivity = 1.0f;
 
         /// <summary>If you want this component to change smoothly over time, then this allows you to control how quick the changes reach their target value.
         /// -1 = Instantly change.
