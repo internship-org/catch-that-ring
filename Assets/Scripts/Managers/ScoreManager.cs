@@ -34,7 +34,7 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int additionalScore)
     {
-        if (Score.Value > 0)
+        if (Score.Value + additionalScore > 0)
             Score.Value += additionalScore;
     }
 

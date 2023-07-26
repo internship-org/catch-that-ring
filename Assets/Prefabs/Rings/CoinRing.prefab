@@ -303,8 +303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61c9af59c8715844987c94127534371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worthPoints: 0
-  dropChance: 0
+  worthPoints: 2
+  dropChance: 0.6666666
 --- !u!1 &8405537523505546691
 GameObject:
   m_ObjectHideFlags: 0

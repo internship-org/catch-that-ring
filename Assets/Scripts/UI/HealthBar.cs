@@ -7,7 +7,7 @@ using DG.Tweening;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField]
-    private IntVariable Health;
+    private IntVariable health;
     Image healthBarImage;
 
     Tween barTween;
@@ -15,7 +15,7 @@ public class HealthBar : MonoBehaviour
 
     private void Awake()
     {
-        Health.Value = Health.InitialValue;
+        health.Value = health.InitialValue;
     }
 
     private void Start()
@@ -28,18 +28,18 @@ public class HealthBar : MonoBehaviour
         barTween = DOTween.To(
             () => healthBarImage.fillAmount,
             x => healthBarImage.fillAmount = x,
-            1.0f * Health.Value / Health.InitialValue,
+            1.0f * health.Value / health.InitialValue,
             1f
         );
     }
 
     public void AnimateBarColor()
     {
-        if (Health.Value < 2)
+        if (health.Value < 2)
         {
             colorTween = healthBarImage.DOColor(Color.red, 1f);
         }
-        else if (Health.Value < 4)
+        else if (health.Value < 4)
         {
             colorTween = healthBarImage.DOColor(Color.yellow, 1f);
         }
