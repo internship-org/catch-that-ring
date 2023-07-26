@@ -83,7 +83,7 @@ MonoBehaviour:
     RequiredMouseButtons: 1
     RequiredSelectable: {fileID: 0}
   _camera: {fileID: 0}
-  sensitivity: 40
+  sensitivity: 100
   damping: -1
   inertia: 0
   remainingTranslation: {x: 0, y: 0, z: 0}
