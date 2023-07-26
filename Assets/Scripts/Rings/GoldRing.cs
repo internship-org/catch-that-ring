@@ -4,6 +4,7 @@ public class GoldRing : RingBase
     {
         base.ApplyEffect();
         base.ApplySound();
+        GoldManager.Instance.AddGold(1);
     }
 
     public override void OnMissed()
