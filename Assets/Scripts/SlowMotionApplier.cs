@@ -11,7 +11,7 @@ public class SlowMotionApplier : MonoBehaviour
         if (gameObject.CompareTag(targetTag))
         {
             Time.timeScale = SlowmotionValue;
-            //Time.fixedDeltaTime = Time.timeScale * .02f;
+            Time.fixedDeltaTime = Time.timeScale * .02f;
             if(!isSlowMo) {
                 isSlowMo = true;
                 StartCoroutine(ResetSlowMo());
