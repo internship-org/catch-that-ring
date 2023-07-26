@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 public class GoldRing : RingBase
 {
     public override void ApplyEffect()
