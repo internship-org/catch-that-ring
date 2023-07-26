@@ -3,6 +3,7 @@ public class GoldRing : RingBase
     public override void ApplyEffect()
     {
         base.ApplyEffect();
+        base.ApplySound();
     }
 
     public override void OnMissed()

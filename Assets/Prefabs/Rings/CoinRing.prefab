@@ -305,7 +305,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drag: {fileID: 11400000, guid: 9c12f92644376264b8b8e98fa187e8c4, type: 2}
   worthPoints: 0
-  dropChance: 0
+  dropChance: 0.2
+  audioPlayer: {fileID: 0}
 --- !u!1 &8405537523505546691
 GameObject:
   m_ObjectHideFlags: 0

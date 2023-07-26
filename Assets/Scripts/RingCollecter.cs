@@ -10,10 +10,12 @@ public class RingCollecter : MonoBehaviour
     [SerializeField]
     Collider ringCollectTrigger;
     private string ringTag = "RingTrigger";
+    AudioPlayer audioPlayer;
 
     private void Awake()
     {
         ringCollectTrigger = GetComponent<Collider>();
+        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     private void Start()

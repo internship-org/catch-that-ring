@@ -13,14 +13,10 @@ public abstract class RingBase : MonoBehaviour
     [SerializeField]
     public float dropChance = 0f;
     Rigidbody rb;
+    public AudioPlayer audioPlayer;
 
     private void Awake() {
-        rb = GetComponent<Rigidbody>();
-        rb.drag = drag.Value;
-        drag.ObserveChange().Subscribe(newDrag =>
-        {
-            rb.drag = newDrag;
-        }).AddTo(this);
+        OnStart();
     }
 
     public virtual void ApplyEffect()
@@ -31,5 +27,18 @@ public abstract class RingBase : MonoBehaviour
     public virtual void OnMissed()
     {
         LeanPool.Despawn(gameObject);
+    }
+
+    public virtual void ApplySound() {
+        AudioPlayer.Instance.PlayCatchingSound();
+    }
+
+    protected void OnStart() {
+        rb = GetComponent<Rigidbody>();
+        rb.drag = drag.Value;
+        drag.ObserveChange().Subscribe(newDrag =>
+        {
+            rb.drag = newDrag;
+        }).AddTo(this);
     }
 }
