@@ -1,5 +1,6 @@
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class HealthManager : MonoBehaviour
 
     public bool IsDead => Health.Value <= 0;
 
+    public UnityEvent DieEvent;
+
     private void Awake()
     {
         Instance = this;
@@ -16,12 +19,12 @@ public class HealthManager : MonoBehaviour
 
     public void AlterHealth(int amount)
     {
-        if (Health.Value > 0)
+        if (Health.Value >= 0)
             Health.Value += amount;
     }
 
     public void Die()
     {
-        print("you dead");
+        DieEvent.Invoke();
     }
 }
