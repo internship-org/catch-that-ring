@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 33533573435370533}
   - component: {fileID: 8645284631715520398}
-  - component: {fileID: 7223129668471747456}
   m_Layer: 6
   m_Name: HoleTriggerCollider
   m_TagString: RingTrigger
@@ -56,20 +55,6 @@ CapsuleCollider:
   m_Height: 0.0141352005
   m_Direction: 1
   m_Center: {x: -0.00031697063, y: 0.000028594732, z: -0.00007613174}
---- !u!114 &7223129668471747456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205379511352114878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f63c42af579eae40aa424c38a2cc3cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  worthPoints: -1
-  dropChance: 0.05
 --- !u!1 &1463894054299287565
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,8 +358,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f63c42af579eae40aa424c38a2cc3cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drag: {fileID: 11400000, guid: 9c12f92644376264b8b8e98fa187e8c4, type: 2}
   worthPoints: -5
-  dropChance: 1
+  dropChance: 0.2142857
+  particleEffect: {fileID: 1139890774153423968, guid: 3b8abd2e24ec76b49864f7a0b6f69d15, type: 3}
+  audioPlayer: {fileID: 0}
 --- !u!1001 &4737397918290411218
 PrefabInstance:
   m_ObjectHideFlags: 0
