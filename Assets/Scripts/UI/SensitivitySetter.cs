@@ -7,10 +7,13 @@ public class SensitivitySetter : MonoBehaviour
     [SerializeField] private CustomDrag customDrag;
     [SerializeField] private Slider sensitivitySlider;
     private string savedSense = "sensitivity";
+    
+    
     void Start(){
         if(!PlayerPrefs.HasKey(savedSense)){
             PlayerPrefs.SetFloat(savedSense, 70);
             Load();
+            SetSensitivity();
         }
         else{
             Load();
