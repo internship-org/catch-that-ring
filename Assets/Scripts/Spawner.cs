@@ -19,10 +19,6 @@ public class Spawner : MonoBehaviour
 
     [SerializeField]
     private float MaxSpawnDelay = 1f;
-
-    [SerializeField]
-    private float MaxRingLifetime = 5f;
-
     private float totalDropChances = 0f;
 
     private void Awake()
