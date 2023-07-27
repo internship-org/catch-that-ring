@@ -9,7 +9,7 @@ public class SensitivitySetter : MonoBehaviour
     private string savedSense = "sensitivity";
     void Start(){
         if(!PlayerPrefs.HasKey(savedSense)){
-            PlayerPrefs.SetFloat(savedSense, 1);
+            PlayerPrefs.SetFloat(savedSense, 70);
             Load();
         }
         else{
