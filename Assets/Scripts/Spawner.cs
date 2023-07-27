@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using System;
@@ -7,6 +6,7 @@ using Lean.Pool;
 
 public class Spawner : MonoBehaviour
 {
+    private bool isSpawningPaused = false;
     private Collider SpawnArea;
     private IDisposable SpawnDisposable;
 
@@ -19,10 +19,6 @@ public class Spawner : MonoBehaviour
 
     [SerializeField]
     private float MaxSpawnDelay = 1f;
-
-    [SerializeField]
-    private float MaxRingLifetime = 5f;
-
     private float totalDropChances = 0f;
 
     private void Awake()
@@ -74,41 +70,50 @@ public class Spawner : MonoBehaviour
     private IEnumerator Spawn()
     {
         yield return new WaitForSeconds(2f);
-
-        while (enabled)
-        {
-            // Generate a random value between 0 and totalDropChances
-            float randomValue = UnityEngine.Random.Range(0f, totalDropChances);
-
-            GameObject Prefab = null;
-
-            // Choose the prefab based on their dropChance
-            foreach (GameObject prefab in RingPrefabs)
+            while (enabled)
             {
-                RingBase ring = prefab.GetComponent<RingBase>();
-                if (ring != null)
+                if (!isSpawningPaused)
                 {
-                    if (randomValue < ring.dropChance)
+                    // Generate a random value between 0 and totalDropChances
+                    float randomValue = UnityEngine.Random.Range(0f, totalDropChances);
+
+                    GameObject Prefab = null;
+
+                    // Choose the prefab based on their dropChance
+                    foreach (GameObject prefab in RingPrefabs)
                     {
-                        Prefab = prefab;
-                        break;
+                        RingBase ring = prefab.GetComponent<RingBase>();
+                        if (ring != null)
+                        {
+                            if (randomValue < ring.dropChance)
+                            {
+                                Prefab = prefab;
+                                break;
+                            }
+                            else
+                            {
+                                randomValue -= ring.dropChance;
+                            }
+                        }
                     }
-                    else
-                    {
-                        randomValue -= ring.dropChance;
-                    }
+                    Vector3 Position = new Vector3();
+                    Position.x = UnityEngine.Random.Range(SpawnArea.bounds.min.x, SpawnArea.bounds.max.x);
+                    Position.y = UnityEngine.Random.Range(SpawnArea.bounds.min.y, SpawnArea.bounds.max.y);
+                    Position.z = UnityEngine.Random.Range(SpawnArea.bounds.min.z, SpawnArea.bounds.max.z);
+                    GameObject Ring = LeanPool.Spawn(Prefab, Position, Quaternion.identity);
+                    // LeanPool.Despawn(Ring, MaxRingLifetime);
                 }
-            }
-
-            Vector3 Position = new Vector3();
-            Position.x = UnityEngine.Random.Range(SpawnArea.bounds.min.x, SpawnArea.bounds.max.x);
-            Position.y = UnityEngine.Random.Range(SpawnArea.bounds.min.y, SpawnArea.bounds.max.y);
-            Position.z = UnityEngine.Random.Range(SpawnArea.bounds.min.z, SpawnArea.bounds.max.z);
-
-            GameObject Ring = LeanPool.Spawn(Prefab, Position, Quaternion.identity);
-            // LeanPool.Despawn(Ring, MaxRingLifetime);
-
             yield return new WaitForSeconds(UnityEngine.Random.Range(MinSpawnDelay, MaxSpawnDelay));
-        }
+            }     
     }
+
+    public void PauseSpawning()
+    {
+        isSpawningPaused = true;
+    }
+
+    public void ResumeSpawning()
+    {
+        isSpawningPaused = false;
+    }   
 }
