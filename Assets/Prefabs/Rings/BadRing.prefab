@@ -360,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drag: {fileID: 11400000, guid: 9c12f92644376264b8b8e98fa187e8c4, type: 2}
   worthPoints: -5
-  dropChance: 0.2142857
+  dropChance: 7
   particleEffect: {fileID: 1139890774153423968, guid: 3b8abd2e24ec76b49864f7a0b6f69d15, type: 3}
   audioPlayer: {fileID: 0}
 --- !u!1001 &4737397918290411218

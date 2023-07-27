@@ -27,7 +27,8 @@ public class ScoreManager : MonoBehaviour
         {
             scoreText.text = score.ToString();
             AnimateTextChange(scoreText.gameObject);
-            endGameScoreText.text = "Score: " + score.ToString();
+            if (!HealthManager.Instance.IsDead)
+                endGameScoreText.text = "Score: " + score.ToString();
         });
     }
 

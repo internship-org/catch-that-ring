@@ -73,9 +73,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -168,9 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Amaranth-Regular SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -409785910
   material: {fileID: -4576735854349152699}
-  materialHashCode: 0
+  materialHashCode: -1189796182
   m_Version: 1.1.0
   m_SourceFontFileGUID: b4a3e21ab1e78bf4ca412697b5d8b389
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: b4a3e21ab1e78bf4ca412697b5d8b389, type: 3}
