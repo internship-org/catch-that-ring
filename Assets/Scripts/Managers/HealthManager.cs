@@ -24,7 +24,7 @@ public class HealthManager : MonoBehaviour
             if (Health.Value + amount <= Health.InitialValue)
                 Health.Value += amount;
         }
-        else
+        else if (!IsDead)
         {
             Health.Value = 0;
             Die();

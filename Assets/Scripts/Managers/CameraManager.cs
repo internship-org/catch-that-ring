@@ -30,6 +30,7 @@ public class CameraManager : MonoBehaviour
     private void Awake()
     {
         endMenuName = "EndMenu";
+        SwitchToStableCamera();
     }
 
     private void Start()
@@ -44,6 +45,12 @@ public class CameraManager : MonoBehaviour
         Observable
             .Timer(System.TimeSpan.FromSeconds(2))
             .Subscribe(_ => menuManager.OpenMenu(endMenuName));
+    }
+
+    public void SwitchToStableCamera()
+    {
+        stableCamera.gameObject.SetActive(true);
+        deathCamera.gameObject.SetActive(false);
     }
 
     public void ShakeCamera()
