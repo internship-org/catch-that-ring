@@ -6,14 +6,18 @@ public class Audio : MonoBehaviour
     [SerializeField] private Slider volumeSlider;
     private string savedMusic = "musicVolume";
     
+    
     void Start(){
+        
         if(!PlayerPrefs.HasKey(savedMusic)){
             PlayerPrefs.SetFloat(savedMusic, 1);
             Load();
+            SetVolume();
         }
         else{
             Load();
         }
+        
 
     }
     
