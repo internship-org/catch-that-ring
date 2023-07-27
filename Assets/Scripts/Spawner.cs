@@ -70,50 +70,66 @@ public class Spawner : MonoBehaviour
     private IEnumerator Spawn()
     {
         yield return new WaitForSeconds(2f);
-            while (enabled)
+        while (enabled)
+        {
+            if (!isSpawningPaused)
             {
-                if (!isSpawningPaused)
+                // Generate a random value between 0 and totalDropChances
+                float randomValue = UnityEngine.Random.Range(0f, totalDropChances);
+
+                GameObject Prefab = null;
+
+                // Choose the prefab based on their dropChance
+                foreach (GameObject prefab in RingPrefabs)
                 {
-                    // Generate a random value between 0 and totalDropChances
-                    float randomValue = UnityEngine.Random.Range(0f, totalDropChances);
-
-                    GameObject Prefab = null;
-
-                    // Choose the prefab based on their dropChance
-                    foreach (GameObject prefab in RingPrefabs)
+                    RingBase ring = prefab.GetComponent<RingBase>();
+                    if (ring != null)
                     {
-                        RingBase ring = prefab.GetComponent<RingBase>();
-                        if (ring != null)
+                        if (randomValue < ring.dropChance)
                         {
-                            if (randomValue < ring.dropChance)
-                            {
-                                Prefab = prefab;
-                                break;
-                            }
-                            else
-                            {
-                                randomValue -= ring.dropChance;
-                            }
+                            Prefab = prefab;
+                            break;
+                        }
+                        else
+                        {
+                            randomValue -= ring.dropChance;
                         }
                     }
-                    Vector3 Position = new Vector3();
-                    Position.x = UnityEngine.Random.Range(SpawnArea.bounds.min.x, SpawnArea.bounds.max.x);
-                    Position.y = UnityEngine.Random.Range(SpawnArea.bounds.min.y, SpawnArea.bounds.max.y);
-                    Position.z = UnityEngine.Random.Range(SpawnArea.bounds.min.z, SpawnArea.bounds.max.z);
-                    GameObject Ring = LeanPool.Spawn(Prefab, Position, Quaternion.identity);
-                    // LeanPool.Despawn(Ring, MaxRingLifetime);
                 }
+                Vector3 Position = new Vector3();
+                Position.x = UnityEngine.Random.Range(
+                    SpawnArea.bounds.min.x,
+                    SpawnArea.bounds.max.x
+                );
+                Position.y = UnityEngine.Random.Range(
+                    SpawnArea.bounds.min.y,
+                    SpawnArea.bounds.max.y
+                );
+                Position.z = UnityEngine.Random.Range(
+                    SpawnArea.bounds.min.z,
+                    SpawnArea.bounds.max.z
+                );
+                GameObject Ring = LeanPool.Spawn(Prefab, Position, Quaternion.identity);
+                // LeanPool.Despawn(Ring, MaxRingLifetime);
+            }
             yield return new WaitForSeconds(UnityEngine.Random.Range(MinSpawnDelay, MaxSpawnDelay));
-            }     
+        }
     }
 
     public void PauseSpawning()
     {
+        Time.timeScale = 0f;
         isSpawningPaused = true;
     }
 
     public void ResumeSpawning()
     {
+        Time.timeScale = 1f;
         isSpawningPaused = false;
-    }   
+    }
+
+    public void EndSpawning()
+    {
+        isSpawningPaused = true;
+    }
 }
