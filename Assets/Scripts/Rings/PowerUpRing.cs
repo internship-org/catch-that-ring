@@ -6,8 +6,14 @@ public class PowerUpRing : RingBase
         base.ApplyEffect();
         ApplySound();
         drag.Value = 5f;
-        Observable.Timer(System.TimeSpan.FromSeconds(2)).Subscribe(_ => drag.Value = drag.InitialValue);
-
+        Observable.Timer(System.TimeSpan.FromSeconds(2)).Subscribe(_ => 
+        {
+            drag.Value = drag.InitialValue;
+            // Resume spawning after the effect ends
+            FindObjectOfType<Spawner>().ResumeSpawning();
+        });
+        // Pause spawning during the effect
+        FindObjectOfType<Spawner>().PauseSpawning();
     }
 
     public override void OnMissed()
