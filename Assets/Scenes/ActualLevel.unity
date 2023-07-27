@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 777ab6f8a28814b4f8743f807c086e4d, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.28163797, g: 0.2704839, b: 0.51180273, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -901,11 +901,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -913,20 +913,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1635738875}
+      objectReference: {fileID: 59124632}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 59124632}
+      objectReference: {fileID: 1376686355}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1376686355}
+      objectReference: {fileID: 1635738875}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -941,35 +941,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: EarnEndGameGolds
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SwitchToDeathCamera
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MenuManager, Assembly-CSharp
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: OpenMenu
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GoldManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: CameraManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1485649144}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1485649144}
+    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1485649144}
+    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Menu, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -977,7 +985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: Menu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1862034231854424610, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1555,6 +1563,8 @@ MonoBehaviour:
   deathCamera: {fileID: 889321737}
   shakeIntensity: 1
   shakeTime: 0.2
+  menuManager: {fileID: 1635738875}
+  endMenuName: 
 --- !u!224 &1485649143 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3958089735868181902, guid: eb7b627bdb7c6964fb79ec392d4abfee, type: 3}
@@ -1730,7 +1740,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 913112513678935674, guid: f67c65a9553f5f44cb254e090f8c3e1a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0999999
+      value: 1.3199999
       objectReference: {fileID: 0}
     - target: {fileID: 913112513678935674, guid: f67c65a9553f5f44cb254e090f8c3e1a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1742,19 +1752,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 913112513678935674, guid: f67c65a9553f5f44cb254e090f8c3e1a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.041025467
+      value: -0.049989983
       objectReference: {fileID: 0}
     - target: {fileID: 913112513678935674, guid: f67c65a9553f5f44cb254e090f8c3e1a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0066356943
+      value: -0.008072775
       objectReference: {fileID: 0}
     - target: {fileID: 913112513678935674, guid: f67c65a9553f5f44cb254e090f8c3e1a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9863175
+      value: 0.985944
       objectReference: {fileID: 0}
     - target: {fileID: 913112513678935674, guid: f67c65a9553f5f44cb254e090f8c3e1a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.15953265
+      value: -0.15921795
       objectReference: {fileID: 0}
     - target: {fileID: 913112513678935674, guid: f67c65a9553f5f44cb254e090f8c3e1a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1786,7 +1796,7 @@ PrefabInstance:
       objectReference: {fileID: 791308994}
     - target: {fileID: 3961690077176927848, guid: f67c65a9553f5f44cb254e090f8c3e1a, type: 3}
       propertyPath: m_FollowOffset.x
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3961690077176927848, guid: f67c65a9553f5f44cb254e090f8c3e1a, type: 3}
       propertyPath: m_FollowOffset.y

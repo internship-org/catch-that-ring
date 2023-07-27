@@ -13,19 +13,14 @@ public class SceneTransition : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-            Destroy(gameObject);
+        Instance = this;
     }
 
     private void Start()
     {
         sceneController = GetComponentInChildren<SceneController>();
         canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup.DOFade(0, 0.5f);
 
         Observable
             .EveryUpdate()
@@ -40,7 +35,6 @@ public class SceneTransition : MonoBehaviour
             .OnComplete(() =>
             {
                 sceneController.LoadGameScene(index);
-                canvasGroup.DOFade(0, 0.5f);
             });
     }
 
@@ -51,7 +45,6 @@ public class SceneTransition : MonoBehaviour
             .OnComplete(() =>
             {
                 sceneController.LoadGameScene(name);
-                canvasGroup.DOFade(0, 0.5f);
             });
     }
 
