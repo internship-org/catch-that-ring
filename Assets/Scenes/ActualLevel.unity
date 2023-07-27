@@ -900,22 +900,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 59124632}
@@ -924,46 +908,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1376686355}
     - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 1635738875}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EarnEndGameGolds
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SwitchToDeathCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: OpenMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GoldManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CameraManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: MenuManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1485649144}
@@ -971,22 +915,6 @@ PrefabInstance:
       propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1485649144}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1485649144}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 685994823464819105, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
-      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Menu, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 1862034231854424610, guid: f10de981dd3ea1d4abee9e192b718dc2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.9112754
