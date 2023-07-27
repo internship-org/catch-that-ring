@@ -9,7 +9,6 @@ public class SceneTransition : MonoBehaviour
 
     Tween fadeTween;
 
-    //make this singleton
     public static SceneTransition Instance { get; private set; }
 
     private void Awake()
@@ -21,6 +20,7 @@ public class SceneTransition : MonoBehaviour
     {
         sceneController = GetComponentInChildren<SceneController>();
         canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup.DOFade(0, 0.5f);
 
         Observable
             .EveryUpdate()

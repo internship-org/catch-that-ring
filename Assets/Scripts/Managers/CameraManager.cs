@@ -1,6 +1,7 @@
 using UnityEngine;
 using Cinemachine;
 using System.Collections;
+using UniRx;
 
 public class CameraManager : MonoBehaviour
 {
@@ -18,9 +19,18 @@ public class CameraManager : MonoBehaviour
 
     float timer = 0f;
 
+    [SerializeField]
+    MenuManager menuManager;
+
     CinemachineBasicMultiChannelPerlin _noise;
 
-    private void Awake() { }
+    [SerializeField]
+    private string endMenuName;
+
+    private void Awake()
+    {
+        endMenuName = "EndMenu";
+    }
 
     private void Start()
     {
@@ -31,6 +41,9 @@ public class CameraManager : MonoBehaviour
     {
         stableCamera.gameObject.SetActive(false);
         deathCamera.gameObject.SetActive(true);
+        Observable
+            .Timer(System.TimeSpan.FromSeconds(2))
+            .Subscribe(_ => menuManager.OpenMenu(endMenuName));
     }
 
     public void ShakeCamera()
