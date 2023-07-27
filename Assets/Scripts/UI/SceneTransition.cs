@@ -9,12 +9,17 @@ public class SceneTransition : MonoBehaviour
 
     Tween fadeTween;
 
-    //make this singleton
     public static SceneTransition Instance { get; private set; }
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
     }
 
     private void Start()
@@ -35,6 +40,7 @@ public class SceneTransition : MonoBehaviour
             .OnComplete(() =>
             {
                 sceneController.LoadGameScene(index);
+                canvasGroup.DOFade(0, 0.5f);
             });
     }
 
@@ -45,6 +51,7 @@ public class SceneTransition : MonoBehaviour
             .OnComplete(() =>
             {
                 sceneController.LoadGameScene(name);
+                canvasGroup.DOFade(0, 0.5f);
             });
     }
 
