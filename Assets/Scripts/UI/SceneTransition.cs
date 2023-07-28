@@ -14,12 +14,13 @@ public class SceneTransition : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup.alpha = 1;
     }
 
     private void Start()
     {
         sceneController = GetComponentInChildren<SceneController>();
-        canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.DOFade(0, 0.5f);
 
         Observable
